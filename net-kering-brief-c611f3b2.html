@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>开云 · 信息卡片介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #f5fafb;
+      color: #1a2e2e;
+      line-height: 1.6;
+      padding: 1.25rem 1rem 3rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 1040px;
+      width: 100%;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #d9efe8 0%, #b7d9d1 100%);
+      border-radius: 2rem 2rem 1.5rem 1.5rem;
+      padding: 2.2rem 1.8rem 2rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 8px 20px rgba(37, 99, 84, 0.10);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #004d40;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 680px;
+      color: #1b4b42;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #2d6b5e;
+      margin-top: 0.6rem;
+      border-left: 3px solid #2c7a6b;
+      padding-left: 1rem;
+    }
+
+    /* 网格卡片 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1.4rem;
+      padding: 1.6rem 1.4rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 50, 40, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(55, 120, 100, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(0, 77, 64, 0.10);
+      border-color: #509c8a;
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+      color: #2d7a6b;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 550;
+      color: #0b443b;
+      margin: 0.2rem 0 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.96rem;
+      color: #2b4f48;
+      flex: 1;
+    }
+
+    .card .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      background: #e0f0ec;
+      color: #1c685a;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      align-self: flex-start;
+    }
+
+    /* 适合人群 — 列表式卡片 */
+    .audience-section {
+      background: #ffffffec;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.6rem 2rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid #b6d5cc;
+      box-shadow: 0 4px 10px rgba(30, 80, 65, 0.04);
+    }
+
+    .audience-section h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #0a4e41;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+      list-style: none;
+    }
+
+    .audience-list li {
+      background: #dcefeb;
+      padding: 0.3rem 1.1rem 0.3rem 1.1rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #134f43;
+      border: 1px solid #98c2b6;
+    }
+
+    .audience-note {
+      margin-top: 1.2rem;
+      font-size: 0.92rem;
+      color: #33685d;
+      border-top: 1px dashed #bcd9d0;
+      padding-top: 1rem;
+    }
+
+    /* 自然链接段落 */
+    .link-paragraph {
+      background: white;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.6rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      border: 1px solid #cbdfd9;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .link-paragraph p {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      color: #1c3c36;
+    }
+
+    .link-paragraph a {
+      color: #1a7b66;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #53a392;
+      padding-bottom: 1px;
+      transition: border-bottom 0.1s;
+    }
+
+    .link-paragraph a:hover {
+      border-bottom: 2px solid #2f8f7a;
+      color: #025746;
+    }
+
+    /* 常见问题摘要 (FAQ) */
+    .faq-mini {
+      background: #e9f3f0;
+      border-radius: 1.6rem;
+      padding: 1.6rem 1.5rem 1.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1b5c4e;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .faq-q {
+      font-weight: 540;
+      color: #154f43;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.97rem;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: #2b6255;
+      padding-left: 0.8rem;
+      border-left: 2px solid #78b9ab;
+      margin-top: 0.1rem;
+    }
+
+    /* 底部 */
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #59877a;
+      border-top: 1px solid #c9ddd6;
+      padding-top: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 600px) {
+      body {
+        padding: 0.8rem 0.8rem 2rem;
+      }
+
+      .hero {
+        padding: 1.8rem 1.2rem;
+        border-radius: 1.6rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .audience-list li {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.9rem;
+      }
+
+      .card {
+        padding: 1.3rem 1rem 1.4rem;
+      }
+
+      .link-paragraph {
+        padding: 1.2rem 1rem;
+      }
+
+      .faq-mini {
+        padding: 1.2rem 1rem;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 主视觉 hero -->
+    <div class="hero">
+      <h1>稳定入口 · 信息卡片</h1>
+      <p>这里是一组围绕 <strong>开云</strong> 的简明介绍，聚焦用途、场景与自然衔接。页面以卡片网格呈现，便于快速浏览与理解。</p>
+      <div class="sub">基于日常使用视角，不做过度包装，只提供平实说明。</div>
+    </div>
+
+    <!-- 用途卡片 (网格) -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="card-icon">🧭</div>
+        <h3>浏览导航</h3>
+        <p>聚合常用信息入口，适合做收藏夹风格的起始页。通过简洁卡片快速找到感兴趣的内容模块。</p>
+        <span class="tag">用途</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>轻量介绍</h3>
+        <p>对品牌、服务或项目做克制的概述，不堆砌术语。卡片式布局让每一部分独立又连贯。</p>
+        <span class="tag">场景</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>自然链接</h3>
+        <p>将核心链接融入段落，不突出按钮感。例如在阅读中了解 <a href="https://net-kering.com" style="color:#1b7a63; border-bottom:1px dotted #479582; text-decoration:none;">开云</a> 的相关内容。</p>
+        <span class="tag">链接</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>移动适配</h3>
+        <p>无论在手机还是桌面，卡片自动调整排列。蓝绿色调温和，阅读体验一致。</p>
+        <span class="tag">响应</span>
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <div class="audience-section">
+      <h2>👥 适合人群</h2>
+      <ul class="audience-list">
+        <li>日常浏览者</li>
+        <li>信息整理爱好者</li>
+        <li>轻量项目介绍页使用者</li>
+        <li>喜欢干净卡片风格的用户</li>
+        <li>需要稳定入口的访问者</li>
+      </ul>
+      <div class="audience-note">
+        卡片内容偏向通用场景，不限定行业。如果你希望获得更具体的功能说明，可以通过网站内文档深入了解。
+      </div>
+    </div>
+
+    <!-- 自然链接段落 (重点: a标签嵌入句子) -->
+    <div class="link-paragraph">
+      <p>很多朋友在寻找一个不复杂、能快速理解站点主题的页面。这里尝试以信息卡片的方式，把用途、适合人群和阅读线索放在同一视野。网站取名<strong> 开云 </strong>，寓意拨开琐碎、呈现清晰的信息层。如果你对这个名字和背后的内容感兴趣，可以直接查看 <a href="https://net-kering.com">开云</a> 的完整站点。页面所有描述都基于实际功能，没有额外夸大。</p>
+      <p>卡片内容仅供参考，各个模块可根据需要调整。网站持续迭代，未来会补充更细致的引导。保持简洁、不打扰，是这一版的设计初衷。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h2>❓ 常见问题摘要</h2>
+      <div class="faq-item">
+        <span class="faq-q">卡片里的链接会跳转到哪里？</span>
+        <div class="faq-a">页面内链接均指向 <a href="https://net-kering.com" style="color:#1f7d67; text-decoration:underline dotted;">开云</a> 主站，无第三方跳转。</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">这些卡片适合做我的起始页吗？</span>
+        <div class="faq-a">完全可以。卡片结构清晰，同时保留了自定义空间，修改颜色或替换内容都很方便。</div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">移动端浏览体验如何？</span>
+        <div class="faq-a">已做响应式适配，卡片在窄屏下单列显示，间距舒适，所有文字可读性强。</div>
+      </div>
+    </div>
+
+    <!-- 页面尾 -->
+    <div class="footer-note">
+      信息卡片 · 稳定入口 · 温和介绍
+    </div>
+  </div>
+</body>
+</html>
