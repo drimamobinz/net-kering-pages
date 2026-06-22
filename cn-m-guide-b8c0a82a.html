@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>完美对战平台 · 资料索引 & 信息整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      color: #1e1e24;
+      background-color: #f6f7f9;
+    }
+
+    /* 深色头图 hero */
+    .hero {
+      background: linear-gradient(140deg, #0b0d14 0%, #1a1e2b 70%, #262b3c 100%);
+      color: #eaeef2;
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 130, 200, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 1rem auto 1.8rem;
+      color: #c7cdd9;
+      font-weight: 300;
+    }
+
+    .hero .sub-meta {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #a1acbf;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.8rem 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 450;
+      margin: 2rem 0 1.2rem;
+      border-left: 4px solid #2f5b9e;
+      padding-left: 1rem;
+      color: #1c202b;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.4rem 1.4rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: transform 0.1s ease;
+      border: 1px solid #e9ecf0;
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #191e2b;
+    }
+
+    .card p {
+      color: #414a5c;
+      font-size: 0.95rem;
+    }
+
+    .highlight-link {
+      color: #1f5092;
+      text-decoration: none;
+      font-weight: 470;
+      border-bottom: 1px dotted #8ba8d6;
+      transition: border-bottom 0.15s, color 0.15s;
+    }
+
+    .highlight-link:hover {
+      color: #0a2f5f;
+      border-bottom: 1px solid #0a2f5f;
+    }
+
+    .faq-block {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2e6ed;
+    }
+
+    .faq-item {
+      margin-bottom: 1.6rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #1e2537;
+    }
+
+    .faq-item p {
+      color: #40485c;
+      font-size: 0.95rem;
+    }
+
+    .bottom-links {
+      border-top: 1px solid #d6dce5;
+      padding-top: 2.2rem;
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem 2.2rem;
+      align-items: baseline;
+      font-size: 0.95rem;
+    }
+
+    .bottom-links a {
+      color: #1f5092;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px dotted #b0c5e0;
+    }
+
+    .bottom-links a:hover {
+      border-bottom: 1px solid #1f5092;
+    }
+
+    .footnote {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: #5b6479;
+      border-top: 1px solid #dce1e9;
+      padding-top: 1.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 1.5rem 1.2rem;
+      }
+      .card-grid {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>完美对战平台 · 信息索引</h1>
+    <p>围绕对战体验、玩家生态与资料整理，逐步梳理平台结构与使用脉络。</p>
+    <span class="sub-meta">资料整理 · 2025</span>
+  </section>
+
+  <!-- 正文 container -->
+  <div class="container">
+
+    <!-- 优势区：卡片 -->
+    <div class="card-grid">
+      <div class="card">
+        <h3>匹配与稳定性</h3>
+        <p>底层网络构架针对多区域调整，延迟与掉线率在近两次升级中有明显改善。</p>
+      </div>
+      <div class="card">
+        <h3>资料整合</h3>
+        <p>对战记录、英雄统计、赛季走势等数据以结构化方式呈现，便于复盘与索引。</p>
+      </div>
+      <div class="card">
+        <h3>社区与文档</h3>
+        <p>官方及玩家整理的机制说明、版本改动、常见条目归档，降低新用户摸索成本。</p>
+      </div>
+    </div>
+
+    <!-- 说明区 / 从资料整理角度切入 -->
+    <h2 class="section-title">从索引逻辑看平台</h2>
+    <p style="margin-bottom: 1rem;">
+      在信息整理的过程中，一个清晰的对战平台往往能减少玩家在“找资料”与“对局准备”之间的割裂感。
+      <a href="https://cn-m-wanmei.com" class="highlight-link">完美对战平台</a> 在个人数据页、英雄胜率面板以及过往对局筛选上提供了一定程度的标签化归类，这在同类平台中属于较为友好的设计。
+    </p>
+    <p style="margin-bottom: 1.2rem;">
+      从索引效率来看，平台将常用入口 —— 包括匹配模式、天梯记录、英雄指南等 —— 放置在二级页面较浅的位置，减少了反复跳转。不过部分历史赛季数据仍需通过特定筛选条件调取，文档中也有对应的说明指引。
+    </p>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-block">
+      <div class="faq-item">
+        <strong>FAQ 摘要 · 平台使用与资料</strong>
+      </div>
+      <div class="faq-item">
+        <strong>对战记录可以回溯多久？</strong>
+        <p>目前支持查看近 90 天内的完整对局数据，更早的记录可通过赛季归档或局部导出方式获取。部分玩家整理的第三方索引站点也可作为补充。</p>
+      </div>
+      <div class="faq-item">
+        <strong>英雄胜率数据的更新频率？</strong>
+        <p>平台内英雄统计面板每日刷新一次，数据源为前一日所有段位对局。对于极冷门英雄可能因样本量过小而不显示具体数值。</p>
+      </div>
+      <div class="faq-item">
+        <strong>平台是否提供 API 或数据导出？</strong>
+        <p>目前没有公开的通用 API，但平台内设有“个人战绩导出”功能（格式为 CSV），可供本地整理或进一步分析。</p>
+      </div>
+    </div>
+
+    <!-- 底部链接区块 -->
+    <div class="bottom-links">
+      <span>相关索引：</span>
+      <a href="https://cn-m-wanmei.com">完美对战平台</a>
+      <a href="#">对战数据说明</a>
+      <a href="#">英雄文档归档</a>
+      <a href="#">赛季变动记录</a>
+    </div>
+
+    <div class="footnote">
+      <p>内容基于公开资料整理，不构成任何承诺或引导。对战体验受网络环境、设备等因素影响，请以实际为准。</p>
+    </div>
+  </div>
+
+</body>
+</html>
